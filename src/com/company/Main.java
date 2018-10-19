@@ -59,7 +59,7 @@ public class Main {
                 bmi *= 100;
                 bmi = Math.round(bmi);
                 bmi /= 100;
-                String opt = new String();
+                String opt;
 
                 if(bmi<16){
                     opt = "starvation";
