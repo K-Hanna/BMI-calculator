@@ -8,29 +8,29 @@ public class Main {
 
     public static void main(String[] args) {
         JFrame f = new JFrame("BMI counter");
-        JTextField imie = new JTextField();
-        JTextField wzrost = new JTextField();
-        JTextField waga = new JTextField();
-        JLabel lblimie = new JLabel("Name");
-        JLabel lblwzrost = new JLabel("Height");
+        JTextField name = new JTextField();
+        JTextField height = new JTextField();
+        JTextField weight = new JTextField();
+        JLabel lblname = new JLabel("Name");
+        JLabel lblheight = new JLabel("Height");
         JLabel lblm = new JLabel("m");
-        JLabel lblwaga = new JLabel("weight");
+        JLabel lblweight = new JLabel("weight");
         JLabel lblkg = new JLabel("kg");
         JLabel lblResult = new JLabel();
         JLabel lblResult2 = new JLabel();
-        JButton oblicz = new JButton("count");
-        JButton reset = new JButton("exit");
+        JButton count = new JButton("count");
+        JButton reset = new JButton("reset");
 
-        f.add(imie);
-        f.add(wzrost);
+        f.add(name);
+        f.add(height);
         f.add(lblm);
-        f.add(waga);
+        f.add(weoght);
         f.add(lblkg);
-        f.add(oblicz);
+        f.add(count);
         f.add(reset);
-        f.add(lblimie);
-        f.add(lblwzrost);
-        f.add(lblwaga);
+        f.add(lblname);
+        f.add(lblheight);
+        f.add(lblweight);
         f.add(lblResult);
         f.add(lblResult2);
         f.setSize(300,400);
@@ -52,10 +52,10 @@ public class Main {
 
         oblicz.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                String name = imie.getText();
-                int weight = Integer.parseInt(waga.getText());
-                double height = Double.parseDouble(wzrost.getText());
-                double bmi = weight / (height * height);
+                String n = name.getText();
+                int w = Integer.parseInt(weight.getText());
+                double h = Double.parseDouble(height.getText());
+                double bmi = w / (h * h);
                 bmi *= 100;
                 bmi = Math.round(bmi);
                 bmi /= 100;
@@ -79,7 +79,7 @@ public class Main {
                     opt = "third degree obesity";
                 }
 
-                lblResult.setText(name + ", your bmi is " + bmi);
+                lblResult.setText(n + ", your bmi is " + bmi);
                 lblResult2.setText(opt);
 
             }
@@ -88,7 +88,12 @@ public class Main {
 
         reset.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                System.exit(0);
+                name.setText("");
+                height.setText("");
+                weight.setText("");
+                lblRestlt.setText("");
+                lblResilt2.setText("");
+                
             }
         });
 
